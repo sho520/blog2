@@ -1,0 +1,5 @@
+.contents.row
+  = form_tag("/blogtop/#{@blog.id}", method: :patch ) do
+    %h6 編集してください
+    %textarea{cols: "30", name: "text", placeholder: "text", rows: "10"}= @blog.text
+    %input{type: "submit", value: "編集"}/

@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
+    %link{"data-turbolinks-track" => "reload", :href => "/assets/application-bbd9da9f13a509113af9749dad0490804d5c495b2fdb6e09c4fcfbb39d14bbbf.css", :media => "all", :rel => "stylesheet"}/
+    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-9622f0fe63bfad91bdeaa3a771e86262263840678fd66849b311b6cfb3f7cc85.js"}
+    %title MiniApp
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "bW7t/VhF+49DJsIS04gTWmUR2yowmg6U6AxXdRLjYgfvPRP7kcaisnp8wfU2CAwFkdzDNykFRQjNHjwr1tCTsg==", :name => "csrf-token"}/
+  %body
+    %nav.deep-orange{:style => "padding: 0 5px;"}
+      .nav-wrapper
+        %a.brand-logo.center{:href => "/"} タイトル
+        %ul#nav-mobile.right.hide-on-med-and-down
+          %li
+            %a{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} ログアウト
+    .row{:style => "padding-top: 50px;"}
+      .col.s12.m6.offset-m3
+        %h1 
+  
+.contents.row
+  .container
+    = form_tag('/blogtop', method: :post) do
+      %h3
+        投稿する
+      %textarea{:cols => "30", :name => "text", :placeholder => "text", :rows => "10"}
+      %input{:type => "submit", :value => "保存"}/
+      %li
+        %a{:href => "/blogtop/"} TOPに戻る
+
